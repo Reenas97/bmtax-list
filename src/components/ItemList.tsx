@@ -6,14 +6,17 @@ interface ItemListProps {
 }
 
 const ItemList: React.FC<ItemListProps> = ({ items }) => {
-  if (items.length === 0) {
-    return <p>Nenhum item encontrado.</p>
-  }
 
   return (
-    <ul>
+    <ul className="space-y-2">
       {items.map((item) => (
-        <li key={item.id}>{item.name}</li>
+        <li
+          key={item.id}
+          className="border border-primaryText text-gray-100 rounded-md px-4 py-2
+          hover:bg-primaryText transition"
+        >
+          <span className="text-gray-100">{item.name}</span>
+        </li>
       ))}
     </ul>
   )
